@@ -1,8 +1,0 @@
-.section
-  .w-container
-    .w-row
-      - @players.each do |player|
-        .w-col.w-col-3.w-col-small-6
-          = image_tag player.image_url.to_s
-          h4= player.full_name 
-          = link_to "Pin", { controller: "pinboard_players", action: "new", id: player}, class: "pinbutton" 
