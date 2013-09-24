@@ -1,0 +1,16 @@
+.content-wrapper
+ #pinboard
+  h1== @pinboard.name
+  .player_profile
+   - @pinboard_players.each do |pp|
+    #profile_img
+    #profile_bio
+    ul
+      li= pp.full_name 
+      / li= pp.club.name unless pp.club.nil
+      li= pp.position
+      li= pp.height
+      li= pp.weight
+      li= pp.place_of_birth
+      / li= pp.player_age
+    = button_to "Remove Pin", pinboard_player_path(player_id: pp.id ), method: "delete"

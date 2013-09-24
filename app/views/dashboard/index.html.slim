@@ -1,0 +1,27 @@
+.section.hero
+  .w-container
+    .w-row
+      -if user_signed_in?
+        .w-col.w-col-6.center
+          = gravatar_for(current_user)
+        / = image_tag "epl-banner.jpg", width: "auto", height: "auto", alt: "image-placeholder.svg", class: "hero-image"
+        .w-col.w-col-6.hero-column
+          h1= "Welcome #{current_user.email}"
+          p Welcome to FUTOBUL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
+          = link_to "Sign out", sign_out_path , class: "button action" 
+      -else
+        .w-col.w-col-6.center
+          = image_tag "epl-banner.jpg", width: "auto", height: "auto", alt: "image-placeholder.svg", class: "hero-image"
+        .w-col.w-col-6.hero-column
+          h1 Dashboard#index
+          p Welcome to FUTOBUL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
+          = link_to "Sign Up", "#", class: "button action" 
+.section
+  .w-container
+    .w-row
+      - @current_user_pinboards.each do |pinboard|
+        li= pinboard.name
+        .w-col.w-col-3.w-col-small-6
+          - @current_user.pins.each do |pin|
+           li= pin.full_name
+
