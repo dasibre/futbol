@@ -33,6 +33,7 @@ group :production do
   gem "slim-rails"
   gem "meta_request"
   gem 'rails_12factor'
+  gem 'mechanize'
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' 
   gem 'carrierwave'
   gem "rmagick"
