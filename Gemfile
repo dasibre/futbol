@@ -27,7 +27,13 @@ group :development, :test do
 end
 # Use sqlite3 as the database for Active Record
 group :production do
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' 
+  gem "rest-client"
+  gem "nokogiri", "~> 1.6.0"
+  gem "devise"
+  gem "slim-rails"
+  gem "meta_request"
+  gem 'rails_12factor'
+  #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' 
   gem 'carrierwave'
   gem "rmagick"
   gem "pg"
