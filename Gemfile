@@ -30,9 +30,10 @@ group :production do
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' 
   gem 'carrierwave'
   gem "rmagick"
+  gem "pg"
 end
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
