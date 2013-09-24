@@ -1,4 +1,4 @@
-require 'rspec/core/rake_task'
+#require 'rspec/core/rake_task'
 namespace :clubs do
 	# desc "add players"
 	# task :add_players => :environment do
