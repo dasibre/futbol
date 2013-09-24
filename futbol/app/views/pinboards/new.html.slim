@@ -1,0 +1,9 @@
+.section.pinboard-form
+  .header
+    h1 Create New Pinboard
+  = form_for @pinboard do |f|
+    = f.label :name, "Pinboard Name"
+    = f.text_field :name
+    br= f.label :description, "Pinboard Description"
+    = f.text_area :description
+    = f.submit class: "button"
