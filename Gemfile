@@ -24,6 +24,8 @@ group :development, :test do
   gem 'mechanize'
   gem 'carrierwave'
   gem "rmagick"
+  gem "youtube_it"
+  gem 'sqlite3'
 end
 # Use sqlite3 as the database for Active Record
 group :production do
@@ -38,9 +40,9 @@ group :production do
   gem 'carrierwave'
   gem "rmagick"
   gem "pg"
+  gem "youtube_it"
 end
 
-#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
