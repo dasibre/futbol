@@ -19,6 +19,7 @@
 .section
   .w-container
     .w-row
+    -if user_signed_in?
       - current_user.pins.each do |pin|
         .w-col.w-col-3.w-col-small-6
           = image_tag pin.image_url.to_s
