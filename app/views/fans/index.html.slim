@@ -19,8 +19,8 @@
 .section
   .w-container
     .w-row
-      - @players.each do |player|
+      - current_user.pins.each do |pin|
         .w-col.w-col-3.w-col-small-6
-          = image_tag player.image_url.to_s
-          h4= player.full_name
-          = link_to "Pin", "#", class: "button"
+          = image_tag pin.image_url.to_s
+          h4= pin.full_name
+          = link_to "Delete Pin", "#", class: "button"
