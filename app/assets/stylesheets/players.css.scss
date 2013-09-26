@@ -45,3 +45,20 @@
 	position:relative;
 	top:1px;
 }
+
+.w-col {
+	position: relative;
+	float:left;
+	width: 100%;
+	min-height: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.w-col-3 {
+	width: 25%;
+}
+
+.pinbuttonhide {
+	display: none;
+}

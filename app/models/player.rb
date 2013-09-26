@@ -17,6 +17,7 @@
 #
 
 class Player < ActiveRecord::Base
+	require 'youtube_it'
 	mount_uploader :image, ImageUploader
 	belongs_to 				:position
 	belongs_to 				:club
@@ -36,5 +37,10 @@ class Player < ActiveRecord::Base
     todays_date = Time.now.utc.to_date
     todays_date.year - self.date_of_birth.year
     #age = todays_date.year - self.date_of_birth.year
+  end
+
+  def get_videos
+  	vids = YouTubeIt::Client.new
+  	vids.videos_by(:query => "#{self.full_name}")
   end
 end

@@ -2,7 +2,7 @@ class PinboardPlayersController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :destroy]
 
   def new
-   session[:player] = params[:id]
+     session[:player] = params[:id]
       @pinboard_player = PinboardPlayer.new(player_id: params[:id]) 
       @current_user_pinboards = get_user_pinboards
      user_pinboards_check?
