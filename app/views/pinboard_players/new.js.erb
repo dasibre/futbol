@@ -1,4 +1,3 @@
-alert('findmehere');
 $('a.pinbutton').click(function() {
-	$(this).hide().after('<%= j render("pinboard_select") %>');
+	$(this).html('<%= escape_javascript(render("pinboard_select")) %>')
 });

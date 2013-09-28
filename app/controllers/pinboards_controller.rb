@@ -5,13 +5,14 @@ class PinboardsController < ApplicationController
 
   def new
   	@pinboard = Pinboard.new
+    store_location
   end
 
   def create
   	@pinboard = current_user.pinboards.build(pinboard_params)
   	if @pinboard.save
   		flash[:notice] = "Pinboard Created"
-  		redirect_to players_path
+  		redirect_to pinboards_path
   	else
   		render :new
   	end
@@ -26,5 +27,14 @@ class PinboardsController < ApplicationController
 
   def pinboard_params
   	params.require(:pinboard).permit(:name, :description)
+  end
+
+  def store_location
+      session[:return_to] = request.fullpath
+   end
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
   end
 end

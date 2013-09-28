@@ -9,8 +9,8 @@
   border:5px solid #fff;
 }
 
-#pinboard {
-  background-color: grey;
+#pinboards {
+  background-color: #fff;
   margin: 10px;
   
    h1 {
@@ -83,4 +83,18 @@ textarea {
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
+}
+
+form.button_to {
+	width: 20px;
+	background: none;
+	padding: 10px;
+}
+
+.pinboards {
+	margin: 0 auto;
+	width: 900px;
+	background: #52C0EB;
+	padding: 50px;
+	border: solid 5px #E6E9EC;
 }

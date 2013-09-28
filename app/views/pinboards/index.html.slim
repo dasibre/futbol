@@ -1,4 +1,6 @@
-h2 find me in pinboards view
-- @pinboards.each do |board|
-  = board.name
-  = board.description
+.section
+  .pinboards
+    h1 Pinboards 
+    - @pinboards.each do |board|
+      h3= link_to "#{board.name} board", pinboard_path(board)
+      li= board.description

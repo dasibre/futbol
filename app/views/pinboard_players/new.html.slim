@@ -1,5 +1,8 @@
-= @pinboard_player.inspect
-= form_for @pinboard_player do |f|
-  = select_tag "board", options_from_collection_for_select(@current_user_pinboards, "id", "name")
-  = f.submit 
+.section
+  / = @pinboard_player.inspect
+  = form_for @pinboard_player do |f|
+  	h3 Select a Pinboard
+    = select_tag "board", options_from_collection_for_select(@current_user_pinboards, "id", "name")
+    = f.submit "Pin Player", class: "button action"
+    br= link_to "Create new board", new_pinboard_path
 

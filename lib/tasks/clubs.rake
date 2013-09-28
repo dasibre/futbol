@@ -28,6 +28,9 @@ namespace :clubs do
 			end
 		end
 
+		def add_player_image
+		end
+
 		get_player_names
 		print @player_fnames
 	end

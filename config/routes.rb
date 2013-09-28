@@ -1,6 +1,6 @@
 Futbol::Application.routes.draw do
   devise_scope :user do
-    get "sign_out", to: "devise/sessions#destroy"
+    get "logout", to: "devise/sessions#destroy"
     get "login", to: "devise/sessions#new"
   end
   get "players", to: "players#index"

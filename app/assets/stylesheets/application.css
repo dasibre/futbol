@@ -21,3 +21,9 @@ body {
   border:5px solid #fff;
   background: rgba(110,25,1,1)
 }
+.notice {
+	color: rgba(57, 54, 136, 1);
+	font-size: 25px;
+	background: #B7BE0C;
+	padding: 5px;
+}

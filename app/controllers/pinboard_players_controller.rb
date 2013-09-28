@@ -5,7 +5,7 @@ class PinboardPlayersController < ApplicationController
      session[:player] = params[:id]
       @pinboard_player = PinboardPlayer.new(player_id: params[:id]) 
       @current_user_pinboards = get_user_pinboards
-     user_pinboards_check?
+      # user_pinboards_check?
   end
 
   def create
@@ -17,8 +17,9 @@ class PinboardPlayersController < ApplicationController
   end
   
   def destroy
+    @pinboard = params[:pinboard]
     PinboardPlayer.find_by_player_id(params[:player_id]).destroy
-    redirect_to pinboards_path, notice: "Pin successfully removed"
+    redirect_to pinboard_path(@pinboard), notice: "Pin successfully removed"
   end
 
   private
@@ -26,14 +27,19 @@ class PinboardPlayersController < ApplicationController
   def get_user_pinboards
 
   	if current_user
-       current_user.pinboards
-  		 #redirect_to new_pinboard_path, notice: "Please create a new pinboard"
+       @current_user_pinboards = current_user.pinboards
+  		 if @current_user_pinboards.empty?
+          redirect_to_new_pinboard
+       else
+          @current_user_pinboards
+       end
   	else
-  		redirect_to root_path, notice: "Please sign in to pin players"
+  		redirect_to login_path, notice: "Please sign in to pin players"
   	end
   end
 
-  def user_pinboards_check?
-    redirect_to new_pinboard_path, notice: "Please create a pinboard" if get_user_pinboards.empty?
+  def redirect_to_new_pinboard
+    redirect_to new_pinboard_path, notice: "Please create a pinboard"
   end
+
 end

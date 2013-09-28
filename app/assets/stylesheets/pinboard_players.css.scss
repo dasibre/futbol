@@ -1,3 +1,28 @@
 // Place all the styles related to the pinboard_players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+section {
+	display: block;
+}
+header {
+	margin: 0;
+	border: 0;
+	font-size: 100%;
+	display: block;
+}
+
+form {
+	margin: 0 auto;
+	padding: 3.4em 3.7em;
+	max-width: 30em;
+	box-shadow: 0 0px 0 1px rgba(0,0,0,0.12),0 1px 8px rgba(0,0,0,0.12);
+	position: relative;
+	padding-top: 6px;
+	background-color: #fff;
+
+	select#board {
+		margin-right: 2px;
+		width: 50px;
+	}
+}
