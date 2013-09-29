@@ -13,7 +13,7 @@
 
 class Pinboard < ActiveRecord::Base
 	belongs_to 	    :user
-	has_many		:pinboard_players
+	has_many		:pinboard_players, dependent: :destroy
 	has_many		:players, through: :pinboard_players
 
 	def pin_player_to_board(player)

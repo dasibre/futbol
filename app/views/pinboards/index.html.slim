@@ -4,3 +4,4 @@
     - @pinboards.each do |board|
       h3= link_to "#{board.name} board", pinboard_path(board)
       li= board.description
+      = button_to "delete Board", pinboard_path(board), method: "delete", data: { confirm: "Are you sure?"}

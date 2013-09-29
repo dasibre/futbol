@@ -18,7 +18,7 @@ class PinboardPlayersController < ApplicationController
   
   def destroy
     @pinboard = params[:pinboard]
-    PinboardPlayer.find_by_player_id(params[:player_id]).destroy
+    PinboardPlayer.find_by_player_id(params[:id]).destroy
     redirect_to pinboard_path(@pinboard), notice: "Pin successfully removed"
   end
 

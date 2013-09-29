@@ -1,8 +1,9 @@
 .content-wrapper
  .pinboard-wrapper
   h1= @pinboard.name
-  .player_profile
-   - @pinboard_players.each do |pp|
+  
+  - @pinboard_players.each do |pp|
+   .player_profile
     #profile_img
       = image_tag pp.image_url.to_s
     #profile_bio
@@ -14,4 +15,4 @@
       li= pp.weight
       li= pp.place_of_birth
       / li= pp.player_age
-    = button_to "Remove this Pin", pinboard_player_path(player_id: pp.id, pinboard: @pinboard), method: "delete", data: { confirm: "Are you sure?"}
+    = button_to "Remove this Pin", pinboard_player_path(pp, pinboard: @pinboard), method: "delete", data: { confirm: "Are you sure?"}

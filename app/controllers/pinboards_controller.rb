@@ -23,6 +23,12 @@ class PinboardsController < ApplicationController
     @pinboard_players = @pinboard.players
   end
 
+  def destroy
+    @pinboard = Pinboard.find(params[:id])
+    @pinboard.destroy
+    redirect_to dashboard_path, notice: "Pinboard #{@pinboard.name} successfully deleted"
+  end
+
   private
 
   def pinboard_params

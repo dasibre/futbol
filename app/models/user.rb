@@ -23,7 +23,7 @@
 
 class User < ActiveRecord::Base
   # mount_uploader :image, ImageUploader
-	has_many :pinboards
+	has_many :pinboards, dependent: :destroy
 	has_many :pins, through: :pinboards, source: :players
 	
   # Include default devise modules. Others available are:

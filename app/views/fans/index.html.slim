@@ -24,4 +24,4 @@
         .w-col.w-col-3.w-col-small-6
           = image_tag pin.image_url.to_s
           h4= pin.full_name
-          = link_to "Delete Pin", "#", class: "button"
+          = link_to "Delete Pin", pinboard_player_path(pin.id), method: "delete", data: { confirm: "Are you sure"}, class: "button"

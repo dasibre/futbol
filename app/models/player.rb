@@ -43,4 +43,9 @@ class Player < ActiveRecord::Base
   	vids = YouTubeIt::Client.new
   	vids.videos_by(:query => "#{self.full_name}")
   end
+
+  def get_player_news
+  	#todo
+  	#get news about player
+  end
 end
