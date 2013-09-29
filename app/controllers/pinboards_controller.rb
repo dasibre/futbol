@@ -1,8 +1,11 @@
 class PinboardsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def index
-    @pinboards = current_user.pinboards
+    @pinboards = current_user.pinboards  
+     if @pinboards.empty? 
+        redirect_to new_pinboard_path, notice: "You have no pinboards"
+      end
   end
 
   def new
