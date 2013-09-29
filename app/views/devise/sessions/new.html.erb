@@ -1,6 +1,6 @@
 <section class="sign_in_register l-register-step-content--signin-create-account">
 <header class="sign_in"><h1>Welcome back</h1></header>
-
+<%= devise_error_messages! %>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	<fieldset class="fieldset">
 	<header class="signup-options-header">
