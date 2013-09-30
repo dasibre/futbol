@@ -7,14 +7,14 @@
         / = image_tag "epl-banner.jpg", width: "auto", height: "auto", alt: "image-placeholder.svg", class: "hero-image"
         .w-col.w-col-6.hero-column
           h1= "Welcome #{current_user.email}"
-          p Welcome to FUTOBUL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
+          p Welcome to FUTOBOL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
           = link_to "Dashboard", dashboard_path , class: "button action" 
       -else
         .w-col.w-col-6.center
           = image_tag "epl-banner.jpg", width: "auto", height: "auto", alt: "image-placeholder.svg", class: "hero-image"
         .w-col.w-col-6.hero-column
-          h1 Futbul Pinboard
-          p Welcome to FUTOBUL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
+          h1 Futbol Pinboard
+          p Welcome to FUTOBOL, find your favorite Premier League players and GO-WILD Pinning them to you Boards.
           = link_to "Sign Up", new_user_registration_path, class: "button action" 
 .section
   .w-container
@@ -25,3 +25,7 @@
           = image_tag pin.image_url.to_s
           h4= pin.full_name
           = link_to "Delete Pin", pinboard_player_path(pin.id), method: "delete", data: { confirm: "Are you sure"}, class: "button"
+    -else
+        .badge
+          = image_tag "world-soccer-ball-1.png", width: "auto", height: "auto"
+    
