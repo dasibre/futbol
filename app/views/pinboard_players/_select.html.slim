@@ -1,0 +1,7 @@
+/ = @pinboard_player.inspect
+.select_board
+  h4 Select
+  = form_for @pinboard_player do |f|
+    .pinselect
+      = select_tag "board", options_from_collection_for_select(@current_user_pinboards, "id", "name")
+      = f.submit "Pin", class: "button"
