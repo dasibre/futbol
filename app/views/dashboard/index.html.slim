@@ -24,7 +24,7 @@
         .w-col.w-col-3.w-col-small-6
           - current_user.pins.each do |pin|
            h4= pin.full_name
-           -pin.get_videos.videos[0..4].each do |video|
+           - get_player_videos(pin).each do |video|
              li= link_to "Youtube Video #{pin.full_name}", video.player_url
 
 

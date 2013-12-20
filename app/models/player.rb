@@ -39,9 +39,9 @@ class Player < ActiveRecord::Base
     #age = todays_date.year - self.date_of_birth.year
   end
 
-  def get_videos
+  def self.get_videos(player)
   	vids = YouTubeIt::Client.new
-  	vids.videos_by(:query => "#{self.full_name}")
+  	vids.videos_by(:query => "#{player.full_name}").videos[0..4]
   end
 
   def get_player_news

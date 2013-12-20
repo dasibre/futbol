@@ -26,6 +26,7 @@ group :development, :test do
   gem "rmagick"
   gem "youtube_it"
   gem 'sqlite3'
+  gem 'delayed_job_active_record'
 end
 # Use sqlite3 as the database for Active Record
 group :production do
@@ -41,6 +42,7 @@ group :production do
   gem "rmagick"
   gem "pg"
   gem "youtube_it"
+  gem 'delayed_job_active_record'
 end
 
 
